@@ -193,7 +193,7 @@ void add_sphere( struct matrix * edges,
   
   step++;
   for ( lat = latStart; lat < latStop; lat++ ) {
-    for ( longt = longStart; longt <= longStop; longt++ ) {
+    for ( longt = longStart; longt < longStop; longt++ ) {
 
       //max and min points of triangles in mesh
       index = lat * (step) + longt;
@@ -205,7 +205,7 @@ void add_sphere( struct matrix * edges,
 	if(longt+1 == longStop){
 	  p_i = latStart;
 	}
-	p_i = (latStop-1) * step + longt+1;
+	else{p_i = (latStop-1) * step + longt+1;}
       }
       if(lat+1 == latStop){
 	n_i = longt;
